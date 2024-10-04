@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedCounter from "./AnimatedCounter";
 
 const TotalBalanceBox = ({
   accounts = [],
@@ -16,9 +17,9 @@ const TotalBalanceBox = ({
           <p className="text-14 font-medium text-gray-600">
             Total Current Balance
           </p>
-          <p className="text-24 lg:text-30 flex-1 font-semibold text-gray-900 flex-center gap-2">
-            {totalCurrentBalance}
-          </p>
+          <div className="text-24 lg:text-30 flex-1 font-semibold text-gray-900 flex-center gap-2">
+            <AnimatedCounter amount={totalCurrentBalance} />
+          </div>
         </div>
       </div>
     </section>
