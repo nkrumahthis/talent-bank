@@ -40,7 +40,7 @@ const Sidebar = ({ user }: SidebarProps) => {
   return (
     <section className="sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between border-r border-gray-200 bg-white pt-8 text-black max-md:hidden sm:p-4 xl:p-6 2xl:w-[355px]">
       <nav className="flex flex-col gap-4">
-        <Link href="/" className="mb-12 cursor-pointer items-center gap-2">
+        <Link href="/" className="flex mb-12 cursor-pointer items-center gap-2">
           <Image
             src="/icons/logo.svg"
             width={34}
@@ -48,8 +48,8 @@ const Sidebar = ({ user }: SidebarProps) => {
             alt="Talent logo"
             className="size-[34px] max-xl:size-14"
           />
-          <h1 className="2xl:text-26 text-[26px] font-bold text-blue-950 max-xl:hidden">
-            Talents
+          <h1 className="2xl:text-26 text-[18px] font-bold text-blue-950 max-xl:hidden">
+            TALENTS BANK
           </h1>
         </Link>
 
@@ -63,15 +63,24 @@ const Sidebar = ({ user }: SidebarProps) => {
               key={item.label}
               className={cn(
                 "flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start",
-                { "bg-bank-gradient": isActive },
+                { "bg-blue-950": isActive },
               )}
             >
               <div className="relative size-6">
-                <div className={cn({ "brightness-[3] invert-0": isActive })}>
+                <div
+                  className={cn({
+                    "brightness-[3] invert-0 !text-white": isActive,
+                  })}
+                >
                   {item.icon}
                 </div>
               </div>
-              <p className={cn("sidebar-label", { "!text-white": isActive })}>
+              <p
+                className={cn(
+                  "text-16 font-semibold text-black-2 max-xl:hidden",
+                  { "!text-white": isActive },
+                )}
+              >
                 {item.label}
               </p>
             </Link>
